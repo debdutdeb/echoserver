@@ -1,0 +1,27 @@
+name: echoserver
+base: core18 
+version: '0.1' 
+summary: A simple echo server
+description: |
+  Echoes whatever path you choose e.g. curl localhost:8080/something echoes back "something"
+
+grade: devel
+confinement: strict
+
+parts:
+  build:
+    plugin: go
+    go-packages:
+      - github.com/sirupsen/logrus
+    source: .
+
+
+apps:
+  server:
+    daemon: simple
+    command: bin/echoserver
+    plugs: [network-bind]
+
+  echoserver:
+    command: bin/echoserver
+    plugs: [network-bind]
