@@ -11,7 +11,7 @@ import (
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		logrus.Info(r.URL.Path[1:])
-		fmt.Fprintf(w, "%q\n", r.URL.Path[1:])
+		fmt.Fprintf(w, "resp: %q\n", r.URL.Path[1:])
 	})
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

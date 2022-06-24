@@ -1,6 +1,6 @@
 name: echoserver
 base: core18 
-version: '0.1' 
+version: 1.0.0
 summary: A simple echo server
 description: |
   Echoes whatever path you choose e.g. curl localhost:8080/something echoes back "something"
